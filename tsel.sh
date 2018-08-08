@@ -36,7 +36,7 @@ tatsumi(){
 	dead=$(echo $send | grep -Po '(?<="code":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ $send =~ "refresh_token" ]]; then
         printf "[Tatsumi-Crew] => $1|$2 ${HIJAU}[LIVE] [$waktu]";
-        echo "$1 | $2" >> die.txt
+        echo "$1 | $2" >> live.txt
         printf "${NORMAL}"
     elif [[ $dead =~ 'error' ]]; then
         printf "[Tatsumi-Crew] => $1|$2 ${MERAH}[DIE] [$waktu]";
